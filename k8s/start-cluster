@@ -1,0 +1,4 @@
+kind load docker-image ssh-debian-app:latest
+kubectl apply -f namespace.yaml
+kubectl apply -f deployment.yaml
+kubectl apply -f service.yaml

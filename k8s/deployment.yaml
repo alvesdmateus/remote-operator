@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: ssh-debian
+  name: ssh-debian
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ssh-debian
+  template:
+    metadata:
+      labels:
+        app: ssh-debian
+    spec:
+      containers:
+      - name: ssh-debian
+        image: ssh-debian-app:latest
+        imagePullPolicy: Never  # Ensure Kubernetes uses the local image
+        ports:
+        - containerPort: 22

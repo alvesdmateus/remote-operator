@@ -1,0 +1,14 @@
+# Requisitos:
+
+- servidor com a porta ssh liberada
+- chaves ssh 
+
+# Input:
+
+- lista de servidores separadas por linha \n
+- chaves ssh 
+
+# Bugs:
+
+bypass fingerprint ansible ssh
+

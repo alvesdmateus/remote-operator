@@ -1,0 +1,25 @@
+---
+- name: Run sequential commands on hosts
+  hosts: teste  # Replace with your desired host group
+  gather_facts: no   # Disable gathering facts to speed up execution
+
+  tasks:
+    - name: Run command 1
+      shell: |
+        echo "Running command 1"
+        ls -l /tmp
+      register: command1_output
+
+    - name: Display command 1 output
+      debug:
+        msg: "{{ command1_output.stdout_lines }}"  # Display stdout lines for command 1
+
+    - name: Run command 2
+      shell: |
+        echo "Running command 2"
+        df -h
+      register: command2_output
+
+    - name: Display command 2 output
+      debug:
+        msg: "{{ command2_output.stdout_lines }}"  # Display stdout lines for command 2
